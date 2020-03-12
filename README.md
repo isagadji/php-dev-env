@@ -13,7 +13,17 @@
     make start
     ```
 
-4. Stop project
+4. Stop project:
     ```bash
     make stop
+    ```
+
+- Restart project:
+    ```bash
+    make restart
+    ```
+
+- Remove project:
+    ``bash
+    make remove
     ```
