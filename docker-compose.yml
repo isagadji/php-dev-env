@@ -1,0 +1,101 @@
+dev-nginx:
+  image: nginx:latest
+  container_name: dev-nginx
+  ports:
+    - 80:80
+    - 443:443
+  volumes:
+    - ./config/nginx/www.conf:/etc/nginx/conf.d/www.conf:delegated
+    - ./volumes/nginx/logs:/var/log/nginx:delegated
+    - ./app:/var/www/html:delegated
+  links:
+    - dev-php
+
+dev-php:
+  build: docker-containers/php7.4
+  container_name: dev-php
+  environment:
+    XDEBUG_REMOTE_HOST: $LOCAL_IP
+    XDEBUG_REMOTE_PORT: 9000
+    XDEBUG_REMOTE_AUTOSTART: 'On'
+    XDEBUG_IDE_KEY: 'PHPSTORM'
+    XDEBUG_PROFILER_ENABLE: 'Off'
+    XDEBUG_PROFILER_OUTPUT_DIR: '/tmp'
+    PHP_IDE_CONFIG: serverName=lol
+  volumes:
+    - ./app:/var/www/html:delegated
+  links:
+    - dev-redis
+    - dev-mongo
+
+dev-mongo:
+  image: mongo:4.2
+  container_name: dev-mongo
+#  ports:
+#    - 27017:27017
+  volumes:
+    - ./volumes/mongodb/db:/data/db:delegated
+
+dev-redis:
+  image: redis:latest
+  container_name: dev-redis
+#  ports:
+#    - 6379:6379
+
+dev-mariadb:
+  build: docker-containers/mariadb
+  container_name: dev-mariadb
+#  command: --default-authentication-plugin=mysql_native_password
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    MYSQL_DATABASE: $MYSQL_DATABASE
+    MYSQL_USER: $MYSQL_USER
+    MYSQL_PASSWORD: $MYSQL_PASSWORD
+    MYSQL_ROOT_HOST: $MYSQL_ROOT_HOST
+  ports:
+    - 3306:3306
+  volumes:
+    - ./config/mariadb/dev.cnf:/etc/mysql/my.cnf:delegated
+    - ./volumes/mariadb/data:/var/lib/mysql:delegated
+    - ./volumes/mariadb/logs:/var/log/mysql:delegated
+
+#dev-mysql:
+#  build: docker-containers/mysql
+#  container_name: dev-mysql
+#  restart: always
+#  environment:
+#    MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+#    MYSQL_DATABASE: $MYSQL_DATABASE
+#    MYSQL_USER: $MYSQL_USER
+#    MYSQL_PASSWORD: $MYSQL_PASSWORD
+#    MYSQL_ROOT_HOST: $MYSQL_ROOT_HOST
+#  ports:
+#    - 3306:3306
+#  volumes:
+#    - ./volumes/mysql/data:/var/lib/mysql:delegated
+#    - ./volumes/mysql/logs:/var/log/mysql:delegated
+
+dev-adminer:
+  image: adminer
+  container_name: dev-adminer
+  restart: always
+  environment:
+    ADMINER_DEFAULT_SERVER: 'dev-mysql'
+  ports:
+    - 8080:8080
+  links:
+    - dev-mariadb
+
+#dev-phpmyadmin:
+#  image: phpmyadmin/phpmyadmin:4.8.5
+#  restart: always
+#  environment:
+#    - PMA_HOST: dev-mariadb
+#    - PMA_PORT: $MYSQL_PORT
+#    - PMA_USER: $MYSQL_USER
+#    - PMA_PASSWORD: $MYSQL_PASSWORD
+#  ports:
+#    - "3333:80"
+#  links:
+#    - dev-mariadb

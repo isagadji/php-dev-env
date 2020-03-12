@@ -1,0 +1,8 @@
+.idea
+.env
+/volumes/mariadb/data/*
+/volumes/mariadb/logs/*
+/volumes/mysql/data/*
+/volumes/mysql/logs/*
+/volumes/mongodb/db/*
+/volumes/nginx/logs/*
