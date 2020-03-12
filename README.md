@@ -14,7 +14,7 @@ TODO:
 - Elastik
 - RabbitMQ
 - Kafka
-- Apache
+- Apache ???
 - (monitoring)
 
 ### Steps
@@ -47,3 +47,21 @@ TODO:
     ```bash
     make remove
     ```
+
+
+### etc
+
+Test mysql, mariadb:
+```
+bash docker exec -it dev-mariadb mysql -u dev -e 'show databases;' -p
+```
+```bash
+docker exec -it dev-mysql mysql -u root -D mysql -e 'select user from user;' -p
+```
+
+Remove docker images:
+```bash
+docker images | awk '{print($3)}' | xargs docker rmi 2>&1 | awk '{print($21)}' | xargs docker rm
+```
+
+
