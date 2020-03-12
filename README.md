@@ -1,29 +1,30 @@
+### Steps
 1. Copy `.env` file:
     ```bash
     cp .env_example .env
     ```
 
-2. Build project:
+2. Build:
     ```bash
     make build
     ```
 
-3. Start project:
+3. Start:
     ```bash
     make start
     ```
 
-4. Stop project:
+4. Stop:
     ```bash
     make stop
     ```
-
-- Restart project:
+# Other `make` commands
+- Restart:
     ```bash
     make restart
     ```
 
-- Remove project:
-    ``bash
+- Remove:
+    ```bash
     make remove
     ```
