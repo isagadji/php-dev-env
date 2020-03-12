@@ -49,7 +49,7 @@ TODO:
     ```
 
 
-### etc
+### Etc..
 
 #### Test mysql, mariadb:
 ```
