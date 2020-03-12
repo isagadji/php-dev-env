@@ -4,18 +4,18 @@
 cp .env_example .env
 ```
 
-2. Build project:
+1. Build project:
 
 ```bash
 make build
 ```
 
-3. Start project:
+1. Start project:
 ```bash
 make start
 ```
 
-4. Stop project
+1. Stop project
 ```bash
 make stop
 ```
