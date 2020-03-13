@@ -1,11 +1,11 @@
 # DEV ENVIRONMENT (docker)
 Services:
-- ![build status badge](https://img.shields.io/badge/nginx-latest-green)
-- ![build status badge](https://img.shields.io/badge/php_fpm-7.4-green)
-- ![build status badge](https://img.shields.io/badge/mariadb-10.4+-green)
-- ![build status badge](https://img.shields.io/badge/mysql-8+-green)
-- ![build status badge](https://img.shields.io/badge/mongodb-4.2-green)
-- ![build status badge](https://img.shields.io/badge/redis-5+-green)
+![build status badge](https://img.shields.io/badge/nginx-latest-green)
+![build status badge](https://img.shields.io/badge/php_fpm-7.4-green)
+![build status badge](https://img.shields.io/badge/mariadb-10.4+-green)
+![build status badge](https://img.shields.io/badge/mysql-8+-green)
+![build status badge](https://img.shields.io/badge/mongodb-4.2-green)
+![build status badge](https://img.shields.io/badge/redis-5+-green)
 
 Tools:
 - adminer:latest
