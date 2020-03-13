@@ -1,5 +1,5 @@
 # PHP DOCKER DEV ENVIRONMENT
-Services:
+#### Inside:
 
 ![build status badge](https://img.shields.io/badge/nginx-latest-green)
 ![build status badge](https://img.shields.io/badge/php--fpm-7.4-green)
