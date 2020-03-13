@@ -7,19 +7,13 @@ Services:
 ![build status badge](https://img.shields.io/badge/mysql-8+-green)
 ![build status badge](https://img.shields.io/badge/mongodb-4.2-green)
 ![build status badge](https://img.shields.io/badge/redis-5+-green)
-
-Tools:
-
 ![build status badge](https://img.shields.io/badge/adminer-latest-blue)
 ![build status badge](https://img.shields.io/badge/phpmyadmin-latest-blue)
-
-TODO:
-
-![build status badge](https://img.shields.io/badge/Elastik-latest-yellow)
-![build status badge](https://img.shields.io/badge/RabbitMQ-latest-yellow)
-![build status badge](https://img.shields.io/badge/Kafka-latest-yellow)
-![build status badge](https://img.shields.io/badge/Apache-latest-yellow)
-![build status badge](https://img.shields.io/badge/monitoring-latest-yellow)
+![build status badge](https://img.shields.io/badge/Elastik-coming_soon-yellow)
+![build status badge](https://img.shields.io/badge/RabbitMQ-coming_soon-yellow)
+![build status badge](https://img.shields.io/badge/Kafka-coming_soon-yellow)
+![build status badge](https://img.shields.io/badge/Apache-coming_soon-yellow)
+![build status badge](https://img.shields.io/badge/monitoring-coming_soon-yellow)
 
 ### Steps
 1. Copy `.env` file:
