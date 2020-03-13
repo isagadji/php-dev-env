@@ -1,6 +1,6 @@
 # DEV ENVIRONMENT (docker)
 Services:
-- [![build status badge](https://img.shields.io/badge/nginx-latest-green)]
+- [build status badge](https://img.shields.io/badge/nginx-latest-green)
 - php-fpm:7.4
 - mariadb:10.4+
 - mysql:8+
