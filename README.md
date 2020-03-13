@@ -64,10 +64,16 @@ docker images | awk '{print($3)}' | xargs docker rmi 2>&1 | awk '{print($21)}' |
 
 
 #### Manual add user in `mysql`/`mariadb`:
+```bash
+docker exec -it dev-mysql mysql -u root -D mysql
+```
+Check users:
 ```SQL
-CREATE USER 'dev'@'dev-adminer' IDENTIFIED BY 'devPassword';
-GRANT ALL PRIVILEGES ON *.* TO 'dev'@'dev-adminer' WITH GRANT OPTION;
-CREATE USER 'dev'@'%' IDENTIFIED BY 'devPassword';
+SELECT user FROM user;
+```
+
+```SQL
+CREATE USER 'dev'@'$' IDENTIFIED BY 'devPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
