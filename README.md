@@ -9,14 +9,16 @@ Services:
 ![build status badge](https://img.shields.io/badge/redis-5+-green)
 
 Tools:
+
 ![build status badge](https://img.shields.io/badge/adminer-latest-blue)
 
 TODO:
-- Elastik
-- RabbitMQ
-- Kafka
-- Apache ???
-- (monitoring)
+
+![build status badge](https://img.shields.io/badge/Elastik-latest-yellow)
+![build status badge](https://img.shields.io/badge/RabbitMQ-latest-yellow)
+![build status badge](https://img.shields.io/badge/Kafka-latest-yellow)
+![build status badge](https://img.shields.io/badge/Apache-latest-yellow)
+![build status badge](https://img.shields.io/badge/monitoring-latest-yellow)
 
 ### Steps
 1. Copy `.env` file:
