@@ -63,7 +63,8 @@ docker images | awk '{print($3)}' | xargs docker rmi 2>&1 | awk '{print($21)}' |
 ```
 
 
-#### Manual add user in `mysql`/`mariadb`:
+#### Manual add user in `mysql/mariadb`:
+Connect to container (`dev-mysql` or `dev-mariadb`)
 ```bash
 docker exec -it dev-mysql mysql -u root -D mysql
 ```
@@ -72,6 +73,7 @@ Check users:
 SELECT user FROM user;
 ```
 
+Add user:
 ```SQL
 CREATE USER 'dev'@'$' IDENTIFIED BY 'devPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
