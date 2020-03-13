@@ -1,5 +1,5 @@
 # PHP DOCKER DEV ENVIRONMENT
-#### Inside:
+### Inside:
 
 ![build status badge](https://img.shields.io/badge/nginx-latest-green)
 ![build status badge](https://img.shields.io/badge/php--fpm-7.4-green)
@@ -63,7 +63,7 @@ docker images | awk '{print($3)}' | xargs docker rmi 2>&1 | awk '{print($21)}' |
 ```
 
 
-#### Add `mysql`/`mariadb` user manual
+#### Manual add user in `mysql`/`mariadb`:
 ```SQL
 CREATE USER 'dev'@'dev-adminer' IDENTIFIED BY 'devPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dev'@'dev-adminer' WITH GRANT OPTION;
