@@ -45,7 +45,6 @@ dev-redis:
 dev-mariadb:
   build: docker-containers/mariadb
   container_name: dev-mariadb
-#  command: --default-authentication-plugin=mysql_native_password
   restart: always
   environment:
     MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
@@ -60,21 +59,23 @@ dev-mariadb:
     - ./volumes/mariadb/data:/var/lib/mysql:delegated
     - ./volumes/mariadb/logs:/var/log/mysql:delegated
 
-#dev-mysql:
-#  build: docker-containers/mysql
-#  container_name: dev-mysql
-#  restart: always
-#  environment:
-#    MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-#    MYSQL_DATABASE: $MYSQL_DATABASE
-#    MYSQL_USER: $MYSQL_USER
-#    MYSQL_PASSWORD: $MYSQL_PASSWORD
-#    MYSQL_ROOT_HOST: $MYSQL_ROOT_HOST
-#  ports:
-#    - 3306:3306
-#  volumes:
-#    - ./volumes/mysql/data:/var/lib/mysql:delegated
-#    - ./volumes/mysql/logs:/var/log/mysql:delegated
+dev-mysql:
+  build: docker-containers/mysql
+  container_name: dev-mysql
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    MYSQL_DATABASE: $MYSQL_DATABASE
+    MYSQL_USER: $MYSQL_USER
+    MYSQL_PASSWORD: $MYSQL_PASSWORD
+    MYSQL_ROOT_HOST: $MYSQL_ROOT_HOST
+  ports:
+    - 3307:3306
+  volumes:
+    - ./volumes/mysql/data:/var/lib/mysql:delegated
+    - ./volumes/mysql/logs:/var/log/mysql:delegated
+
+# TOOLS
 
 dev-adminer:
   image: adminer
@@ -86,16 +87,19 @@ dev-adminer:
     - 8080:8080
   links:
     - dev-mariadb
+    - dev-mysql
 
-#dev-phpmyadmin:
-#  image: phpmyadmin/phpmyadmin:4.8.5
-#  restart: always
-#  environment:
-#    - PMA_HOST: dev-mariadb
-#    - PMA_PORT: $MYSQL_PORT
-#    - PMA_USER: $MYSQL_USER
-#    - PMA_PASSWORD: $MYSQL_PASSWORD
-#  ports:
-#    - "3333:80"
-#  links:
-#    - dev-mariadb
+dev-phpmyadmin:
+  image: phpmyadmin/phpmyadmin:4.8.5
+  container_name: dev-phpmyadmin
+  restart: always
+  environment:
+    PMA_HOST: dev-mariadb
+    PMA_PORT: $MYSQL_PORT
+    PMA_USER: $MYSQL_USER
+    PMA_PASSWORD: $MYSQL_PASSWORD
+  ports:
+    - 3333:80
+  links:
+    - dev-mariadb
+    - dev-mysql
