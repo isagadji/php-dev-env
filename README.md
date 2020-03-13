@@ -35,6 +35,10 @@
     ```bash
     make stop
     ```
+5. Add host `dev.local`
+    ```bash
+    sudo make add_hosts
+    ```
 ### Other `make` commands
 - Restart:
     ```bash
@@ -75,7 +79,7 @@ SELECT user FROM user;
 
 Add user:
 ```SQL
-CREATE USER 'dev'@'$' IDENTIFIED BY 'devPassword';
+CREATE USER 'dev'@'%' IDENTIFIED BY 'devPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```

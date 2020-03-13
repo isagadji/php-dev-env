@@ -34,8 +34,7 @@ build: ## Build docker
 	$(DOCKER_COMPOSE) -f $(PROJECT_CONFIG) build --parallel
 
 add_hosts: ## Add local domains to file /etc/hosts
-	echo "127.0.0.1   lol.local" >> /etc/hosts
-	echo "127.0.0.1   lol.dev" >> /etc/hosts
+	echo "127.0.0.1   dev.local" >> /etc/hosts
 
 remove: ## Stop and remove all containers and images
 	@echo "Execute remove all containers..."
