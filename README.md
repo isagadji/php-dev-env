@@ -2,11 +2,10 @@
 Services:
 - ![build status badge](https://img.shields.io/badge/nginx-latest-green)
 - ![build status badge](https://img.shields.io/badge/php_fpm-7.4-green)
-- php-fpm:7.4
-- mariadb:10.4+
-- mysql:8+
-- mongodb:4.2
-- redis:5+
+- ![build status badge](https://img.shields.io/badge/mariadb-10.4+-green)
+- ![build status badge](https://img.shields.io/badge/mysql-8+-green)
+- ![build status badge](https://img.shields.io/badge/mongodb-4.2-green)
+- ![build status badge](https://img.shields.io/badge/redis-5+-green)
 
 Tools:
 - adminer:latest
