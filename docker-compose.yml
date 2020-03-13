@@ -21,7 +21,7 @@ dev-php:
     XDEBUG_IDE_KEY: 'PHPSTORM'
     XDEBUG_PROFILER_ENABLE: 'Off'
     XDEBUG_PROFILER_OUTPUT_DIR: '/tmp'
-    PHP_IDE_CONFIG: serverName=lol
+    PHP_IDE_CONFIG: serverName=dev
   volumes:
     - ./app:/var/www/html:delegated
   links:

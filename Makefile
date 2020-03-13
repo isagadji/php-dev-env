@@ -1,6 +1,5 @@
 PROJECT_PATH=$(shell pwd)
 PROJECT_CONFIG=$(PROJECT_PATH)/docker-compose.yml
-WEB_PROJECT_PATH='lol'
 DOCKER_COMPOSE=`which docker-compose`
 DOCKER=`which docker`
 

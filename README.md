@@ -21,7 +21,7 @@
     cp .env_example .env
     ```
 
-2. Build:
+1. Build:
     ```bash
     make build
     ```
@@ -30,12 +30,16 @@
     ```bash
     make start
     ```
+1. Show docker status
+    ```bash
+    make status
+    ```
 
-4. Stop:
+1. Stop:
     ```bash
     make stop
     ```
-5. Add host `dev.local`
+1. Add local domains (`dev.local`) to file `/etc/hosts`
     ```bash
     sudo make add_hosts
     ```
@@ -45,9 +49,13 @@
     make restart
     ```
 
-- Remove:
+- Stop and remove all containers and images:
     ```bash
     make remove
+    ```
+- Reset docker. Stop and start
+    ```bash
+    make reset
     ```
 
 
