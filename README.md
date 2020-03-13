@@ -1,4 +1,4 @@
-# DEV ENVIRONMENT (docker)
+# PHP DOCKER DEV ENVIRONMENT
 Services:
 
 ![build status badge](https://img.shields.io/badge/nginx-latest-green)
