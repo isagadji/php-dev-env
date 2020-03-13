@@ -11,6 +11,7 @@ Services:
 Tools:
 
 ![build status badge](https://img.shields.io/badge/adminer-latest-blue)
+![build status badge](https://img.shields.io/badge/phpmyadmin-latest-blue)
 
 TODO:
 
