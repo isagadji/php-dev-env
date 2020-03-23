@@ -115,3 +115,12 @@ redis-commander:
   - 8083:8081
   links:
     - dev-redis
+
+mongoku:
+  image: huggingface/mongoku
+  ports:
+    - 8084:3100
+  environment:
+    MONGOKU_DEFAULT_HOST: "mongodb://dev-mongo:27017"
+  links:
+    - dev-mongo

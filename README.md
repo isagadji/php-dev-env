@@ -9,6 +9,8 @@
 ![build status badge](https://img.shields.io/badge/redis-5+-green)
 ![build status badge](https://img.shields.io/badge/adminer-tool-blue)
 ![build status badge](https://img.shields.io/badge/phpmyadmin-tool-blue)
+![build status badge](https://img.shields.io/badge/redis_commander-tool-blue)
+![build status badge](https://img.shields.io/badge/mongoku-tool-blue)
 ![build status badge](https://img.shields.io/badge/Elastik-coming_soon-yellow)
 ![build status badge](https://img.shields.io/badge/RabbitMQ-coming_soon-yellow)
 ![build status badge](https://img.shields.io/badge/Kafka-coming_soon-yellow)
@@ -58,6 +60,11 @@
     make reset
     ```
 
+### Tools
+- adminer - http://localhost:8081
+- phpmyadmin - http://localhost:8082
+- Redis-Commander - http://localhost:8083
+- MongoKu - http://localhost:8084
 
 ### Etc..
 
