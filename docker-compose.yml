@@ -105,7 +105,7 @@ dev-phpmyadmin:
     - dev-mysql
 
 redis-commander:
-  container_name: redis-commander
+  container_name: dev-redis-commander
   hostname: redis-commander
   image: rediscommander/redis-commander:latest
   restart: always

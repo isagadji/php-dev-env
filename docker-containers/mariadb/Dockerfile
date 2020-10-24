@@ -59,8 +59,8 @@ RUN rm -rf $GNUPGHOME
 RUN apt-key list
 
 # bashbrew-architectures: amd64 arm64v8 ppc64le
-ENV MARIADB_MAJOR 10.4
-ENV MARIADB_VERSION 1:10.4.12+maria~bionic
+ENV MARIADB_MAJOR 10.5
+ENV MARIADB_VERSION 1:10.5.6+maria~bionic
 # release-status:Stable
 # (https://downloads.mariadb.org/mariadb/+releases/)
 
@@ -84,6 +84,7 @@ RUN { \
 RUN apt-get update && apt-get install -y "mariadb-server=$MARIADB_VERSION" mariadb-backup socat
 
 RUN	rm -rf /var/lib/apt/lists/*
+COPY config /etc/mysql
 # comment out any "user" entires in the MySQL config ("docker-entrypoint.sh" or "--user" will handle user switching)
 RUN sed -ri 's/^user\s/#&/' /etc/mysql/my.cnf /etc/mysql/conf.d/*
 # purge and re-create /var/lib/mysql with appropriate ownership
