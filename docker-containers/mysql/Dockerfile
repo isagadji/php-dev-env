@@ -48,7 +48,9 @@ RUN set -ex; \
 	apt-key list > /dev/null
 
 ENV MYSQL_MAJOR 8.0
-ENV MYSQL_VERSION 8.0.19-1debian10
+#check version in http://repo.mysql.com/apt/debian/dists/buster/mysql-8.0/binary-amd64/Packages
+#or run curl -s http://repo.mysql.com/apt/debian/dists/buster/mysql-8.0/binary-amd64/Packages | grep -i version | head -1 | sed -e "s/^Version: //"
+ENV MYSQL_VERSION 8.0.31-1debian10
 
 RUN echo "deb http://repo.mysql.com/apt/debian/ buster mysql-${MYSQL_MAJOR}" > /etc/apt/sources.list.d/mysql.list
 
